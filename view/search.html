@@ -1,0 +1,48 @@
+<ion-view>
+  <ion-header-bar class="bar-dark">
+    <button class="button button-icon" ng-click="back()">
+      <i class="icon ion-ios-arrow-left"></i>
+    </button>
+
+    <h1 class="title">
+      搜索
+    </h1>
+  </ion-header-bar>
+  <ion-content class="search">
+    <div class="search_web">
+      <div class="item-input-inset">
+        <label class="item-input-wrapper">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="搜索">
+        </label>
+      </div>
+
+      <div class="search_classfy">
+        <h3>大家都在搜</h3>
+        <ul>
+          <li><a ui-sref="searchArticle({count:1,title:'好莱坞'})">好莱坞</a></li>
+          <li><a ui-sref="searchArticle({count:2,title:'亚马逊'})">亚马逊</a></li>
+          <li><a ui-sref="searchArticle({count:3,title:'阿里巴巴'})">阿里巴巴</a></li>
+          <li><a ui-sref="searchArticle({count:4,title:'音乐节'})">音乐节</a></li>
+          <li><a ui-sref="searchArticle({count:5,title:'特拉斯'})">特斯拉</a></li>
+          <li><a ui-sref="searchArticle({count:6,title:'腾讯'})">腾讯</a></li>
+          <li><a ui-sref="searchArticle({count:7,title:'苹果'})">苹果</a></li>
+          <li><a ui-sref="searchArticle({count:8,title:'海淘'})">海淘</a></li>
+          <li><a ui-sref="searchArticle({count:9,title:'百度'})">百度</a></li>
+          <li><a ui-sref="searchArticle({count:10,title:'Google'})">Google</a></li>
+          <li><a ui-sref="searchArticle({count:11,title:'小米'})">小米</a></li>
+          <li><a ui-sref="searchArticle({count:12,title:'时尚'})">时尚</a></li>
+          <li><a ui-sref="searchArticle({count:13,title:'迪士尼'})">迪士尼</a></li>
+          <li><a ui-sref="searchArticle({count:14,title:'万达'})">万达</a></li>
+          <li><a ui-sref="searchArticle({count:15,title:'星巴克'})">星巴克</a></li>
+          <li><a ui-sref="searchArticle({count:16,title:'人工智能'})">人工智能</a></li>
+          <li><a ui-sref="searchArticle({count:17,title:'无人机'})">无人机</a></li>
+          <li><a ui-sref="searchArticle({count:18,title:'华为'})">华为</a></li>
+          <li><a ui-sref="searchArticle({count:19,title:'MUJI'})">MUJI</a></li>
+          <li><a ui-sref="searchArticle({count:20,title:'宜家'})">宜家</a></li>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+

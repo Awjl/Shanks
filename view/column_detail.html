@@ -1,0 +1,50 @@
+<ion-view>
+  <ion-header-bar class="bar-dark">
+    <button class="button button-icon" ng-click="back()">
+      <i class="icon ion-ios-arrow-left"></i>
+    </button>
+    <h1 class="title">
+      {{title}}
+    </h1>
+  </ion-header-bar>
+  <ion-content class="column1">
+    <img ng-src="{{largeimg}}" alt="" class="img1">
+    <div class="cal">
+      <h2>{{title}}</h2>
+      <p>{{descripts}}</p>
+    </div>
+    <div class="static">
+      <div>
+        <span class="sp1">本栏目有以下记者主持</span>
+        <div class="left"><img src="img/8.jpg" alt=""><p>Shanks</p></div>
+        <p>《shanks日报》记者，如果你发现任何好设计，请联系linhui@qq.com</p>
+        <span class="sp2">{{num}}人订阅本专栏</span>
+      </div>
+      <ul class="clear">
+        <li><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+        <li><img src="img/4.jpg" alt=""></li>
+        <li><img src="img/5.jpg" alt=""></li>
+      </ul>
+      <ul>
+        <li><img src="img/6.jpg" alt=""></li>
+        <li><img src="img/7.jpg" alt=""></li>
+        <li><img src="img/8.jpg" alt=""></li>
+        <li><img src="img/9.jpg" alt=""></li>
+        <li><img src="img/10.jpeg" alt=""></li>
+      </ul>
+    </div>
+    <div class="row row-wrap">
+      <div class="col col-50 article_small" ng-repeat="item in items" ui-sref="detail({image:item.image,title:item.post.title,avatar:item.post.author.avatar,description:item.post.description,catetitle:item.post.category.title,cateimg:item.post.category.normal,time:item.post.publish_time})">
+        <img ng-src="{{item.image}}" alt="">
+        <span> <img ng-src="{{item.post.category.normal}}" alt="">{{item.post.category.title}}</span>
+        <h1>{{item.post.title|limitTo:25}}</h1>
+        <div class="date">{{item.post.publish_time|getDate}}</div>
+        <div class="iconfont"><i class="icon ion-ios-chatbubble"></i>&nbsp;{{item.post.comment_count}}&nbsp;<i class="icon ion-ios-heart"></i>&nbsp;{{item.post.praise_count}}</div>
+      </div>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" spinner="ios" ng-if="item<3">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

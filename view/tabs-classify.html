@@ -1,0 +1,111 @@
+<ion-view>
+  <ion-header-bar class="bar-dark item-button-right index-title">
+    <a href="">
+      <img src="img/logo.png" alt="" class="logo">
+    </a>
+    <button class="button button-clear login-btn icon-left" ui-sref="login" ng-if="!userShow">
+      <i class="icon ion-ios-person login-icon"></i>
+      &nbsp;登录
+    </button>
+    <button class="button button-clear login-btn icon-left" ng-if="userShow" ng-click="showList()">
+      <i class="icon ion-ios-person login-icon"></i>
+      &nbsp;Shanks
+    </button>
+    <div class="user_list" ng-if="showInfo">
+      <div ui-sref="myselfCenter({state:'tabs.classify'})">
+        <i class="icon ion-ios-person"></i>
+        个人中心
+      </div>
+      <div ui-sref="information">
+        <i class="icon ion-ios-gear"></i>
+        账号设置
+      </div>
+      <div ng-click="exit()">
+        <i class="icon ion-ios-undo"></i>
+        退出登录
+      </div>
+    </div>
+  </ion-header-bar>
+  <ion-content class="classify">
+  <div class="classify-far">
+    <a ui-sref="classifyList({title:'article',name:'长文章'})" nav-direction="forward">
+      <div class="classify-son son-l">
+        <img src="http://img.qdaily.com/article/article_show/2017041701255884ODXsAxm2Jpv5ct.jpg?imageMogr2/auto-orient/thumbnail/!480x293r/gravity/Center/crop/480x293/quality/85/format/webp/ignore-error/1">
+        <div></div>
+        <span>长文章</span>
+      </div>
+    </a>
+
+    <a ui-sref="classifyList({title:'tenpic',name:'十个图'})">
+      <div class="classify-son">
+        <img src="http://img.qdaily.com/article/article_show/201703061917165OpzrK62SmLUV0Mk.jpg?imageMogr2/auto-orient/thumbnail/!480x293r/gravity/Center/crop/480x293/quality/85/format/webp/ignore-error/1" alt="">
+        <div></div>
+        <span>10个图</span>
+      </div>
+    </a>
+
+    <a ui-sref="classifySmallList({title:'top',name:'Top15'})">
+      <div class="classify-son son-l">
+        <img src="http://img.qdaily.com/article/article_show/20170415155811NFGmYdVclUJ6Ena0.jpg?imageMogr2/auto-orient/thumbnail/!480x293r/gravity/Center/crop/480x293/quality/85/format/webp/ignore-error/1" alt="">
+        <div></div>
+        <span>Top15</span>
+      </div>
+    </a>
+
+    <a ui-sref="classifySmallList({title:'business',name:'商业'})">
+      <div class="classify-son">
+        <img src="http://img.qdaily.com/article/article_show/20170407081336Q3TKxVrbMqFm8nAh.jpg?imageMogr2/auto-orient/thumbnail/!480x293r/gravity/Center/crop/480x293/quality/85/format/webp/ignore-error/1" alt="">
+        <div></div>
+        <span>商业</span>
+      </div>
+    </a>
+
+    <a ui-sref="classifySmallList({title:'wisdom',name:'智能'})">
+      <div class="classify-son son-l">
+        <img src="http://img.qdaily.com/article/article_show/20170414163731AizgBMI7w4DuKFHs.jpg?imageMogr2/auto-orient/thumbnail/!480x293r/gravity/Center/crop/480x293/quality/85/format/webp/ignore-error/1" alt="">
+        <div></div>
+        <span>智能</span>
+      </div>
+    </a>
+
+    <a ui-sref="classifySmallList({title:'design',name:'设计'})">
+      <div class="classify-son">
+        <img src="http://img.qdaily.com/article/article_show/20170413114159La8dnvzWtMEh2mZI.jpg?imageMogr2/auto-orient/thumbnail/!480x293r/gravity/Center/crop/480x293/quality/85/format/webp/ignore-error/1" alt="">
+        <div></div>
+        <span>设计</span>
+      </div>
+    </a>
+
+    <a ui-sref="classifySmallList({title:'fashion',name:'时尚'})">
+      <div class="classify-son son-l">
+        <img src="http://img.qdaily.com/article/article_show/20170411105118urCcK8m9bWBkaIoz.jpg?imageMogr2/auto-orient/thumbnail/!480x293r/gravity/Center/crop/480x293/quality/85/format/webp/ignore-error/1" alt="">
+        <div></div>
+        <span>时尚</span>
+      </div>
+    </a>
+
+    <a ui-sref="classifySmallList({title:'realise',name:'娱乐'})">
+      <div class="classify-son">
+        <img src="http://img.qdaily.com/article/article_show/20170417003355lfXCRWY2mIv07hLu.JPG?imageMogr2/auto-orient/thumbnail/!480x293r/gravity/Center/crop/480x293/quality/85/format/webp/ignore-error/1" alt="">
+        <div></div>
+        <span>娱乐</span>
+      </div>
+    </a>
+
+    <a ui-sref="classifySmallList({title:'city',name:'城市'})">
+      <div class="classify-son son-l">
+        <img src="http://img.qdaily.com/article/article_show/20170414140426dYhFcUBbgsmRiQDt.jpg?imageMogr2/auto-orient/thumbnail/!480x293r/gravity/Center/crop/480x293/quality/85/format/webp/ignore-error/1" alt="">
+        <div></div>
+        <span>城市</span>
+      </div>
+    </a>
+
+    <div class="classify-son" ui-sref="search">
+      <img src="http://img.qdaily.com/article/article_show/20170412051711ITfaqv0lR2DBEnwP.jpeg?imageMogr2/auto-orient/thumbnail/!480x293r/gravity/Center/crop/480x293/quality/85/format/webp/ignore-error/1" alt="">
+      <div></div>
+      <span>搜索</span>
+    </div>
+  </div>
+
+  </ion-content>
+</ion-view>

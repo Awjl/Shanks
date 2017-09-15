@@ -1,0 +1,73 @@
+.search .search_web{
+  width:90%;
+  margin: 0 auto;
+}
+.search .item-input-inset{
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+.search .search_classfy{
+  box-sizing: border-box;
+}
+.search .search_classfy h3{
+  font-weight: 200;
+  font-size: 17px;
+  height:25px;
+  line-height: 25px;
+  width:100%;
+  margin-top: 10px;
+
+}
+.search .search_classfy ul{
+  width:100%;
+  padding-top: 14px;
+  border-top: 1px solid #e6e6e6;
+  margin-top: 10px;
+}
+.search .search_classfy ul li{
+  width: 33%;
+  float: left;
+  line-height: 25px;
+}
+.search .search_classfy ul li a{
+  text-decoration: none;
+  color: #363636;
+}
+.search .article_time{
+  float: right;
+  color: #888;
+  }
+.search .article_content{
+  display: block;
+  padding: 15px 0px;
+  margin-bottom:0px;
+  border-top: 1px solid #e6e6e6;
+}
+.search .article_tit{
+  height:24px;
+  margin:12px 0px;
+  margin-bottom: 8px;
+  font-size: 17px;
+  color: #363636;
+}
+.search .article_tit span{
+  font-size: 13px;
+}
+.search .article_content_tit{
+  font-size: 16px;
+  line-height: 22px;
+}
+.search .article_content_img{
+  width:18px;
+  height:18px;
+  display: inline-block;
+  float: left;
+  margin-right: 5px;
+
+}
+.search .article_content_content{
+  padding-top: 6px;
+  font-size: 13px;
+
+}

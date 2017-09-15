@@ -1,0 +1,48 @@
+<ion-view>
+  <ion-header-bar class="bar-dark">
+    <button class="button button-icon" ng-click="back()">
+      <i class="icon ion-ios-arrow-left"></i>
+    </button>
+
+    <h1 class="title">
+      {{infos.title|limitTo:20}}
+    </h1>
+    <button class="button button-icon" ng-click="show()">
+      <i class="icon ion-ios-more"></i>
+    </button>
+  </ion-header-bar>
+  <ion-content class="lifeList">
+    <div class="list_top" >
+      <ion-list>
+        <ion-item>
+          <div class="item_top">
+            <img ng-src="{{infos.image}}" alt="">
+          </div>
+          <div class="item_bottom">
+            <h2>{{infos.title}}</h2>
+            <p>{{infos.desc}}</p>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="list_bottom">
+      <div class="list_all" >
+        <div class="list_main" ng-repeat="item in info">
+          <div class="list_title">
+            <img src="{{item.author.avatar}}" alt=""><span>{{item.author.name}}</span>
+          </div>
+          <div class="list_content">
+            <p>{{item.content}}</p>
+          </div>
+          <div class="list_footer"><p><span class="icon ion-thumbsup"></span>{{item.praise_count}}<span>赞</span></p></div>
+        </div>
+      </div>
+    </div>
+    <ion-infinite-scroll
+      on-infinite="loadMore()" immediate-check="true" ng-if="item<=5">
+    </ion-infinite-scroll>
+    <div ng-if="item>=5" class="footer">
+      已无更多的信息
+    </div>
+  </ion-content>
+</ion-view>

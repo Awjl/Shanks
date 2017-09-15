@@ -1,0 +1,27 @@
+<ion-view>
+  <ion-header-bar class="bar-dark">
+    <button class="button button-icon" ng-click="back()">
+      <i class="icon ion-ios-arrow-left"></i>
+    </button>
+    <h1 class="title">
+      个人中心
+    </h1>
+    <!--<button class="button button-icon" ng-click="show()">
+      <i class="icon ion-ios-more"></i>
+    </button>-->
+  </ion-header-bar>
+  <ion-content class="myselfCenter">
+    <div class="center">
+      <div class="center_img"><img src="img/selfcenter.png" alt=""></div>
+      <div class="center_txt"><span>Shanks</span>,你的脑洞指数还不够哦！</div>
+    </div>
+    <div class="choice">
+      <div  ng-class="{onactive:$index==index} " ng-repeat="item in items" ng-click="goOther($index)">
+        {{item}}
+      </div>
+    </div>
+    <ion-nav-view class="nothing">
+
+    </ion-nav-view>
+  </ion-content>
+</ion-view>

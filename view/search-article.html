@@ -1,0 +1,38 @@
+<ion-view>
+  <ion-header-bar class="bar-dark">
+    <button class="button button-icon" ng-click="back()">
+      <i class="icon ion-ios-arrow-left"></i>
+    </button>
+
+    <h1 class="title">
+      {{keyword}}
+    </h1>
+  </ion-header-bar>
+  <ion-content class="search">
+    <div class="search_web">
+      <div class="item-input-inset">
+        <label class="item-input-wrapper">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" value="{{keyword}}">
+        </label>
+      </div>
+      <p class="article_tit">文章<span>({{total}}条搜索结果)</span></p>
+      <div class="article" ng-repeat="item in items" ui-sref="detail({image:item.image,title:item.post.title,avatar:item.post.author.avatar,description:item.post.description,catetitle:item.post.category.title,cateimg:item.post.category.normal,time:item.post.publish_time})">
+
+        <p class="article_content">
+          <img ng-src="{{item.post.category.normal}}" alt="" class="article_content_img">
+          <span>{{item.post.category.title}}</span>
+          <span class="article_time">{{item.post.publish_time|getDate}}</span>
+          <div class="article_content_tit">
+            {{item.post.title|substr:32}}
+
+          </div>
+          <div class="article_content_content">
+            {{item.post.description|substr:75}}
+
+          </div>
+        </p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

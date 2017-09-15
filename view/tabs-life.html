@@ -1,0 +1,56 @@
+<ion-view>
+  <ion-header-bar class="bar-dark item-button-right index-title">
+    <a href="">
+      <img src="img/logo.png" alt="" class="logo">
+    </a>
+    <button class="button button-clear login-btn icon-left" ui-sref="login" ng-if="!userShow">
+      <i class="icon ion-ios-person login-icon"></i>
+      &nbsp;登录
+    </button>
+    <button class="button button-clear login-btn icon-left" ng-if="userShow" ng-click="showList()">
+      <i class="icon ion-ios-person login-icon"></i>
+      &nbsp;Shanks
+    </button>
+    <div class="user_list" ng-if="showInfo">
+      <div ui-sref="myselfCenter({state:'tabs.life'})">
+        <i class="icon ion-ios-person"></i>
+        个人中心
+      </div>
+      <div ui-sref="information">
+        <i class="icon ion-ios-gear"></i>
+        账号设置
+      </div>
+      <div ng-click="exit()">
+        <i class="icon ion-ios-undo"></i>
+        退出登录
+      </div>
+    </div>
+  </ion-header-bar>
+  <ion-content class="life">
+    <ion-list>
+      <ion-item ng-repeat="item in info" ui-sref="list({image:item.post.image,title:item.post.title,desc:item.post.description})" >
+        <div class="item_top" >
+          <img src="{{item.post.image}}" alt="">
+          <div class="item_img">
+            <a href=""><img src="{{item.post.category.image_lab}}" alt=""></a>
+          </div>
+          <div class="item_num">
+            <span>JOIN</span>
+            <p style="font-weight: bold">{{item.post.record_count}}</p>
+            <p>人已参加</p>
+          </div>
+        </div>
+        <div class="item_bottom">
+          <h2>{{item.post.title}}</h2>
+          <p>{{item.post.description}}</p>
+        </div>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll
+      on-infinite="loadMore()" immediate-check="false" ng-if="item<6">
+    </ion-infinite-scroll>
+    <div ng-if="item>=7" class="footer">
+      已无更多的信息
+    </div>
+  </ion-content>
+</ion-view>

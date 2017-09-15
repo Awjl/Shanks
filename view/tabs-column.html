@@ -1,0 +1,47 @@
+<ion-view>
+  <ion-header-bar class="bar-dark item-button-right index-title">
+    <a href="">
+      <img src="img/logo.png" alt="" class="logo">
+    </a>
+    <button class="button button-clear login-btn icon-left" ui-sref="login" ng-if="!userShow">
+      <i class="icon ion-ios-person login-icon"></i>
+      &nbsp;登录
+    </button>
+    <button class="button button-clear login-btn icon-left" ng-if="userShow" ng-click="showList()">
+      <i class="icon ion-ios-person login-icon"></i>
+      &nbsp;Shanks
+    </button>
+    <div class="user_list" ng-if="showInfo">
+      <div ui-sref="myselfCenter({state:'tabs.column'})">
+        <i class="icon ion-ios-person"></i>
+        个人中心
+      </div>
+      <div ui-sref="information">
+        <i class="icon ion-ios-gear"></i>
+        账号设置
+      </div>
+      <div ng-click="exit()">
+        <i class="icon ion-ios-undo"></i>
+        退出登录
+      </div>
+    </div>
+  </ion-header-bar>
+  <ion-content class="column">
+    <div class="row row-wrap row1" >
+      <div class="col col-50" ng-repeat="item in items" ui-sref="colDetail({image:item.image_large,title:item.name,descripts:item.description,num:item.subscriber_num,index:$index})">
+        <div class="row2">
+          <img ng-src="{{item.image}}" alt="">
+          <!--<img ng-src="{{item.image_large}}" alt="">-->
+          <div class="name1">{{item.name}}</div>
+          <div class="center1">
+            <span class="icon ion-plus-round icon1"></span>
+            <div class="center1"><i class="ion-android-person"></i>  <span>shanks</span> 日报</div>
+            <div class="last1">{{item.subscriber_num}} 人订阅，更新至{{item.post_count}}篇</div>
+          </div>
+        </div>
+      </div>
+      <!--这里必须是并列的-->
+      <ion-infinite-scroll on-infinite="doLoad()" spinner="ios" immediate-check="true" ng-if="index<2"></ion-infinite-scroll>
+    </div>
+  </ion-content>
+</ion-view>

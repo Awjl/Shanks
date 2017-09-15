@@ -1,0 +1,124 @@
+<ion-view>
+  <ion-header-bar class="bar-dark">
+    <button class="button button-icon" ng-click="back()">
+      <i class="icon ion-ios-arrow-left"></i>
+    </button>
+    <h1 class="title">
+      {{title}}
+    </h1>
+    <button class="button button-icon" ng-click="show()">
+      <i class="icon ion-ios-more"></i>
+    </button>
+  </ion-header-bar>
+  <ion-content class="index-detail">
+    <div class="detail-tags">
+      <a href="">
+        <span><img ng-src="{{cateimg}}" alt=""></span>
+        <span>{{catetitle}}</span>
+      </a>
+      <p>
+       <!-- <span>国家安全局</span>
+        <span>银行</span>-->
+      </p>
+    </div>
+    <h1 class="tit">
+      {{title}}
+    </h1>
+    <div class="author-date">
+      <div>
+        <span class="author-img"><img ng-src="{{avatar}}" alt=""></span>
+        <span class="author-txt">Nicole Perlroth</span>
+      </div>
+      <span class="author-time">{{time|getDate}}</span>
+    </div>
+    <div class="detail-img">
+      <img ng-src="{{image}}" alt="">
+    </div>
+    <div class="detail-serf">
+      <a href=""><img src="img/weibo.png" alt=""></a>
+      <a href=""><img src="img/qq.png" alt=""></a>
+      <a href=""><img src="img/kongjian.png" alt=""></a>
+      <a href=""><img src="img/douban.png" alt=""></a>
+      <a href=""><img src="img/linke.png" alt=""></a>
+    </div>
+    <div class="detail-article-content">
+      <div class="empty"></div>
+      <div class="detail-article-tit">{{description}}</div>
+      <div class="empty"></div>
+    </div>
+    <div class="detail-article-content-content">
+      <p><i>＊本文只能在《Shanks日报》发布，即使我们允许了也不许转载＊</i></p>
+      <p>过去几个月来，一个自称“Shadow Brokers”的黑客组织一直在零星泄露美国国家安全局（National Security Agency）的敏感资料。原本 Shadow Brokers 爆料的速度似乎有所放缓，但就在上周五，这个黑客组织放出了目前为止看起来危害性最严重的消息：一批非常机密、可以黑进多种微软系统的黑客工具。与此同时，Shadow Brokers 还表示，这正是美国国家安全局秘密潜入中东银行机构主干网的证据。</p>
+      <p>近来，美国对叙利亚的政策发生了变化，美国与叙利亚政府的主要支持者俄罗斯之间的矛盾冲突因此升级。此次黑客工具泄漏事件恰好就发生在这样的背景之下。Shadow Brokers 用蹩脚的英语在网上发帖说明了爆料的理由，其中提到了美国对叙利亚一处空军基地的导弹袭击。他们还写道，特朗普抛弃了“那些让你当选的人”，这令他们很失望，因此间断一段时间后，他们又重新开始爆料了。</p>
+      <p>Shadow Brokers 周五泄露的资料里有大量的 PPT 和 Excel 文件。如果这些文件是真的话，那么根据它们的内容，美国国家安全局已经成功入侵了 EastNets 公司。EastNets 是一家总部位于迪拜的公司，负责协助管理一个名为 Swift 的国际银行信息系统。</p>
+      <p>Swift 是“环球银行金融电信协会”（Society for Worldwide Interbank Financial Telecommunication）的简称，目前共有大约 11000 家银行使用这一系统从一个国家转钱到另一个国家。大多数此类银行都要靠 Swift 服务机构来处理业务，比如中东最大的 Swift 服务中心 EastNets 公司。最新泄露的文件资料显示，通过入侵 EastNets 公司，美国国家安全局可能已经成功黑进或者至少锁定了中东一些最大型银行内部的电脑，比如阿拉伯联合酋长国的阿布扎比和迪拜、科威特、卡塔尔、叙利亚、也门以及巴勒斯坦地区的一些银行。泄露的文件资料中还有一张美国国家安全局入侵 Swift 后端基础架构的路线图，未来可以用于网络犯罪。不过路线图中被利用的漏洞现已被打上了安全补丁。</p>
+      <p>这并非美国情报机构第一次被指控入侵中东银行系统。2012 年，安全研究人员发现了一种入侵了成千上万台电脑的电脑病毒，受感染电脑中有许多是黎巴嫩银行的电脑。和为了获得最大的金钱利益而瞄准银行的网络犯罪事件不同，这些攻击者有一张黎巴嫩银行客户目标清单，他们监控这些客户的金融交易。而据专家称，这些黎巴嫩银行客户是叙利亚政府和黎巴嫩激进组织及政党黎巴嫩真主党（Hezbollah）的财务金融渠道。</p>
+      <p>网络安全专家表示，那场攻击留下的数字痕迹显示，该病毒的制作者和震网病毒（Stuxnet）背后的攻击者是同一批——震网病毒曾破坏过一家伊朗核设施的离心机，人们认为是美国和以色列一手策划了这一计算机袭击事件。</p>
+      <p>这也不是第一次有国家被指控入侵 Swift 银行系统了。2016 年 2 月，孟加拉国中央银行发生了一起黑客入侵 Swift 银行系统窃走 8100 万美元的事件。目前，联邦检察官正在调查朝鲜在这起事件中可能扮演的角色。安全研究人员发现，孟加拉国盗窃案中黑客使用的跟踪代码和 2014 年一场针对索尼（Sony）的破坏性网络袭击中黑客使用的跟踪代码相同。而奥巴马政府和安全专家曾指责称，是朝鲜黑客实施了对索尼的网络袭击。</p>
+      <p>美国目前正在牵头调查朝鲜在 Swift 盗窃案中可能扮演的角色。如果此次 Shadow Brokers 泄露的文件资料属实，那么根据这些资料，美国国家安全局也入侵了 Swift 系统，这就把美国置于了一个尴尬的地位。</p>
+      <p>Shadow Brokers 最早是在八月份出现的。当时，这个黑客组织放出了一张清单，声称上面列出的都是美国国家安全局的黑客工具。开始一些人怀疑这些文件资料来自美国国家安全局某一违反职业操守的内部人员之手。但是，联邦调查局逮捕了一位他们认为正在囤积且有嫌疑泄露国家安全局黑客工具的国家安全局合同工后，Shadow Brokers 还在继续泄露文件资料。</p>
+      <p>安全专家和曾泄露美国国家安全局高度机密文件、目前生活在俄罗斯境内的前国家安全局合同工爱德华·J·斯诺登（Edward J. Snowden）提出了另外一种理论，认为 Shadow Brokers 是去年美国总统竞选期间出现的黑客事件背后的俄罗斯组织旗下的一部分。一些安全研究人员认为，美国情报界可能会对俄罗斯在选举前泄露文件资料的行为进行反击，而此次事件警告美国情报官员，俄罗斯可能已经窃取了美国情报界反击时可能使用的工具。</p>
+      <p>美国对俄罗斯的同盟国叙利亚进行空袭后，Shadow Brokers 重新开始了其泄密行为。4 月 8 日，该组织发帖称，特朗普抛弃了那些帮助他当选总统的人。“Shadow Brokers 正在对你失去信心，”它补充道，“看起来你似乎在抛弃‘你的基础’、‘行动’和那些帮助你当选的人。”</p>
+    </div>
+    <div class="content-footer">
+      <p>翻译 熊猫译社 钱功毅</p>
+      <p>题图来自 Flickr@Visual Content</p>
+      <p>© 2017 THE NEW YORK TIMES</p>
+    </div>
+    <ul class="article-detail-ft">
+      <li><span>国家安全局</span><span>银行</span><span>纽约时报</span><span>黑客</span></li>
+      <li><span>Shank brokers</span><span>微软</span></li>
+    </ul>
+    <div class="share-wrapper">
+      <span>分享至：</span>
+      <a href=""><img src="img/weibo.png" alt=""></a>
+      <a href=""><img src="img/qq.png" alt=""></a>
+      <a href=""><img src="img/kongjian.png" alt=""></a>
+      <a href=""><img src="img/douban.png" alt=""></a>
+      <a href=""><img src="img/linke.png" alt=""></a>
+    </div>
+    <div class="ft-empty"></div>
+    <div class="article_next">
+      <a href="">
+        <img src="img/next1.jpg" alt="">
+        <div class="classify-list-mb">
+          <div class="classify-list-NB">
+            <div class="classify-list-textbox">
+              <p>
+                <span>$ 商业</span>
+              </p>
+              <h3>
+                黑客打劫猖獗，银行不仅被盗还会被罚钱
+              </h3>
+              <div class="classify-list-tb">
+                <span class="icon ion-chatbubble"> 5</span>&ensp;&nbsp;
+                <span class="icon ion-ios-heart"> 14</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="ft-empty"></div>
+    <div class="comment">
+      <p class="tit">2条评论</p>
+      <div class="list list-inset">
+        <a class="item item-avatar">
+          <img src="img/user1.jpg" alt="">
+          <h2>超<br/><span>35分钟前</span></h2>
+          <p>自从特朗普上任后 我觉得他太傲 根本不把任何人 事 放在眼里</p>
+        </a>
+        <a class="item item-avatar">
+          <img src="img/user2.jpg" alt="">
+          <h2>清水黄沙<br/><span>8小时前</span></h2>
+          <p>特朗普真心世界毒瘤</p>
+        </a>
+      </div>
+
+    </div>
+
+
+
+  </ion-content>
+</ion-view>

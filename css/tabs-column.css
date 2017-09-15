@@ -1,0 +1,42 @@
+.column .row2{
+  position: relative;
+  background: #f2f2f2;
+  border: 1px solid #eee;
+  /*height: 260px;*/
+}
+.column .row1 .row2 .name1{
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-weight: 900;
+}
+.column .row1 img{
+  width: 100%;
+}
+
+.column .row1 .center1{
+  font-size: 10px;
+  color: #666;
+  text-align: center;
+  padding-top:8px;
+  position: relative;
+}
+.column .row1 .icon1{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: yellow;
+  border-radius: 50%;
+  text-align: center;
+  left: 45%;
+  top:-15%;
+}
+.column .row1 .center1 .last1{
+  padding:0 20px 10px;
+}
+.column .row1 .center1 span{
+  font-size: 14px;
+}
+

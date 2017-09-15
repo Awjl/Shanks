@@ -1,0 +1,96 @@
+<ion-view>
+  <ion-header-bar class="bar-dark item-button-right index-title" >
+    <a href="">
+      <img src="img/logo.png" alt="" class="logo">
+    </a>
+    <button class="button button-clear login-btn icon-left" ui-sref="login" ng-if="!userShow">
+      <i class="icon ion-ios-person login-icon"></i>
+      &nbsp;登录
+    </button>
+    <button class="button button-clear login-btn icon-left" ng-if="userShow" ng-click="showList()">
+      <i class="icon ion-ios-person login-icon"></i>
+      &nbsp;Shanks
+    </button>
+    <div class="user_list" ng-if="showInfo">
+      <div ui-sref="myselfCenter({state:'tabs.home'})">
+          <i class="icon ion-ios-person"></i>
+          个人中心
+      </div>
+      <div ui-sref="information">
+          <i class="icon ion-ios-gear"></i>
+          账号设置
+      </div>
+      <div ng-click="exit()">
+          <i class="icon ion-ios-undo"></i>
+          退出登录
+      </div>
+    </div>
+  </ion-header-bar>
+    <ion-content class="home" on-scroll="getPosition()">
+      <ion-slide-box class="home-slides" auto-play="true" does-continue="true">
+        <ion-slide class="slide1 slide" ui-sref="bannerDetail({index:'first'})">
+            <h1>
+              <span><img src="img/20160606004533uFozK3xI4CHZjfSM.png" alt="">城市.长文章</span>
+              英国脱欧，伦敦不再宽容，我们或许该问：这个伟大城市会没落吗？
+            </h1>
+        </ion-slide>
+        <ion-slide class="slide2 slide" ui-sref="bannerDetail({index:'second'})">
+            <h1>
+              <span><img src="img/20160606004531TgJK5XPy61qfS7rN.png" alt="">时尚.长文章</span>
+              谁在替上海张罗那个时装周？
+            </h1>
+        </ion-slide>
+        <ion-slide class="slide3 slide" ui-sref="bannerDetail({index:'three'})">
+          <h1>
+            <span><img src="img/20160606004539qDxRAKMYwQfucvCP.png" alt="">商业.长文章</span>
+            从广州十三行到淘宝网红店，卖衣服的生意就这么变了 ①
+          </h1>
+        </ion-slide>
+        <ion-slide class="slide4 slide" ui-sref="bannerDetail({index:'four'})">
+          <h1>
+            <span><img src="img/20160606004531TgJK5XPy61qfS7rN.png" alt="">娱乐.长文章</span>
+            歌单聚集的注意力越来越多，它会像当年的单曲一样再次重塑音乐产业吗？
+          </h1>
+        </ion-slide>
+      </ion-slide-box>
+        <div ng-repeat="item in items" class="article">
+          <div ng-if="item.type==1" class="article_small" ui-sref="detail({image:item.image,title:item.post.title,avatar:item.post.author.avatar,description:item.post.description,catetitle:item.post.category.title,cateimg:item.post.category.normal,time:item.post.publish_time})">
+            <img ng-src="{{item.image}}" alt="">
+            <span> <img ng-src="{{item.post.category.normal}}" alt="">{{item.post.category.title}}</span>
+            <h1>{{item.post.title|limitTo:25}}</h1>
+            <div class="date">{{item.post.publish_time|getDate}}</div>
+            <div class="iconfont"><i class="icon ion-ios-chatbubble"></i>&nbsp;{{item.post.comment_count}}&nbsp;<i class="icon ion-ios-heart"></i>&nbsp;{{item.post.praise_count}}</div>
+          </div>
+          <div  ng-if="item.datatype=='paper'" class="pager" ui-sref="list({image:item.post.image,title:item.post.title,desc:item.post.description})">
+            <div class="item_top">
+              <img src="{{item.post.image}}" alt="">
+              <div class="item_img">
+                <a href=""><img src="{{item.post.category.image_lab}}" alt=""></a>
+              </div>
+              <div class="item_num">
+                <span>JOIN</span>
+                <p style="font-weight: bold">{{item.post.record_count}}</p>
+                <p>人已参加</p>
+              </div>
+            </div>
+            <div class="item_bottom">
+              <h2>{{item.post.title}}</h2>
+              <p>{{item.post.description}}</p>
+            </div>
+          </div>
+          <div ng-if="item.type==2" class="article_big" ui-sref="detail({image:item.image,title:item.post.title,avatar:item.post.author.avatar,description:item.post.description,catetitle:item.post.category.title,cateimg:item.post.category.normal,time:item.post.publish_time})">
+            <img ng-src="{{item.image}}" alt="">
+            <div class="info">
+              <span><img ng-src="{{item.post.category.normal}}" alt="">{{item.post.category.title}}</span>
+              <h1>{{item.post.title|limitTo:30}}</h1>
+              <div class="iconfont"><i class="icon ion-ios-chatbubble"></i>&nbsp;{{item.post.comment_count}}&nbsp;&nbsp;<i class="icon ion-ios-heart"></i>&nbsp;{{item.post.praise_count}}</div>
+            </div>
+          </div>
+      </div>
+      <ion-infinite-scroll on-infinite="doLoad()" ng-if="count<15">
+      </ion-infinite-scroll>
+    </ion-content>
+    <div class="backTop" ng-click="goTop()" ng-show="showBtn">
+        返回顶部
+    </div>
+</ion-view>

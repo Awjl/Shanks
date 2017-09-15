@@ -1,0 +1,22 @@
+<ion-view>
+  <ion-header-bar class="bar-dark">
+    <button class="button button-icon" ng-click="back()">
+      <i class="icon ion-ios-arrow-left"></i>
+    </button>
+    <h1 class="title">
+     {{namE}}
+    </h1>
+  </ion-header-bar>
+ <ion-content class="classify-small-list">
+   <div ng-repeat="item in items" ng-if="item.type==1" ui-sref="detail({image:item.image,title:item.post.title,avatar:item.post.author.avatar,description:item.post.description,catetitle:item.post.category.title,cateimg:item.post.category.normal,time:item.post.publish_time})" class="article_small">
+     <img ng-src="{{item.image}}" alt="">
+     <span> <img ng-src="{{item.post.category.normal}}" alt="">{{item.post.category.title}}</span>
+     <h1>{{item.post.title|limitTo:25}}</h1>
+     <div class="date">{{item.post.publish_time|getDate}}</div>
+     <div class="iconfont"><i class="icon ion-ios-chatbubble"></i>&nbsp;{{item.post.comment_count}}&nbsp;<i class="icon ion-ios-heart"></i>&nbsp;{{item.post.praise_count}}</div>
+   </div>
+
+    <ion-infinite-scroll on-infinite="doLoad()" ng-if="index<3">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>
